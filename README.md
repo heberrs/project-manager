@@ -1,6 +1,7 @@
 # Gerenciador de Projetos e Equipes
 
 Este repositório contém uma solução completa (Monorepo/Multirepo) para Gestão de Projetos, Equipes e Tarefas, contendo um backend em Spring Boot (Java) e um frontend moderno com Next.js (TypeScript), Tailwind CSS e suporte a PWA (instalável em dispositivos móveis).
+O frontend foi desenvolvido apenas para facitar os testes com a API feita em JAVA (Backend)
 
 ---
 
@@ -30,6 +31,7 @@ Para acessar o painel do frontend (`http://localhost:3000`), utilize um dos usu�
 Para testar a aplicação completa, você precisará iniciar o backend e, em seguida, o frontend.
 
 ### 1. Executar o Backend
+
 O backend gerencia as regras de negócio e utiliza um banco de dados em memória H2.
 
 1. Navegue até a pasta do backend:
