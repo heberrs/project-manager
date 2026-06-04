@@ -129,7 +129,7 @@ class IntegracaoTest {
         tarefaRequest.setStatus(StatusTarefa.A_INICIAR);
 
         MvcResult tarefaResult = mockMvc.perform(post("/api/tarefas")
-                        .with(httpBasic("gerente", "gerente")) // Manager can perform tasks creation
+                        .with(httpBasic("gerente", "senha123")) // Manager can perform tasks creation
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(tarefaRequest)))
                 .andExpect(status().isCreated())
@@ -148,12 +148,12 @@ class IntegracaoTest {
 
         // 9. Faz uma requisição para os relatórios de desempenho e ocupação usando o usuário gerente. Authorized as Gerente. Os relatórios devem refletir a tarefa concluída e a ocupação do colaborador.
         mockMvc.perform(get("/api/relatorios/desempenho")
-                        .with(httpBasic("gerente", "gerente")))
+                        .with(httpBasic("gerente", "senha123")))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].percentualConcluido").value(100.0));
+                .andExpect(jsonPath("$[?(@.projetoId == " + project.getId() + ")].percentualConcluido").value(100.0));
 
         mockMvc.perform(get("/api/relatorios/ocupacao")
-                        .with(httpBasic("gerente", "gerente")))
+                        .with(httpBasic("gerente", "senha123")))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[?(@.colaboradorId == " + novoColaborador.getId() + ")].totalTarefasAtribuidas").value(1))
                 .andExpect(jsonPath("$[?(@.colaboradorId == " + novoColaborador.getId() + ")].tarefasConcluidas").value(1));

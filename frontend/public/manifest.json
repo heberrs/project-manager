@@ -1,0 +1,24 @@
+{
+  "short_name": "ProjectMgr",
+  "name": "Gerenciador de Projetos Oracle Client",
+  "description": "Sistema PWA para gerenciamento de projetos, equipes e tarefas.",
+  "start_url": "/",
+  "background_color": "#0f172a",
+  "theme_color": "#6366f1",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
+}
