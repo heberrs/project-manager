@@ -33,6 +33,7 @@ Para testar a aplicação completa, você precisará iniciar o backend e, em seg
 ### 1. Executar o Backend
 
 O backend gerencia as regras de negócio e utiliza um banco de dados em memória H2.
+Requisitos: Java 21 JDK instalado com computador.
 
 1. Navegue até a pasta do backend:
 
@@ -53,6 +54,7 @@ A API estará disponível em `http://localhost:8080`. Para detalhes do console d
 ### 2. Executar o Frontend
 
 O frontend fornece a interface do usuário e se integra com o backend.
+Requisitos: Última versão estável (LTS) instalada no computador.
 
 1. Abra um novo terminal e navegue até a pasta do frontend:
 
